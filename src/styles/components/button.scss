@@ -1,0 +1,24 @@
+@use "../var.scss";
+
+.button {
+  @extend .main-gradient;
+
+  cursor: pointer;
+  padding: var.$sizeM;
+  border-radius: var.$sizeM;
+  color: var.$color-danger;
+  font-size: var.$fontL;
+
+  display: inline-block;
+  transition: transform 0.1s ease-out, color 0.15s linear;
+  transform: scale(1);
+
+  &:active {
+    transition: none;
+    transform: scale(0.96);
+  }
+
+  &:active::after {
+    transform: scale(1.042);
+  }
+}

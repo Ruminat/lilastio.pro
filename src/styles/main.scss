@@ -4,6 +4,8 @@
 @import "./fonts.scss";
 @import "./base.scss";
 
+@import "./components/button.scss";
+
 html, body {
   @extend .main-gradient;
 
@@ -63,6 +65,15 @@ h4 {
   color: var.$color-text-secondary;
 }
 
+a {
+  cursor: pointer;
+  color: var.$color-info;
+
+  &:hover {
+    color: var.$color-info-hover;
+  }
+}
+
 .social-links {
   margin-top: var.$sizeM;
 }
@@ -77,6 +88,17 @@ h4 {
   width: 256px;
   height: 256px;
   border-radius: 100%;
+
+  transition: transform 0.1s ease-out, color 0.15s linear;
+
+  &:active {
+    transition: none;
+    transform: scale(0.96);
+  }
+
+  &:active::after {
+    transform: scale(1.042);
+  }
 }
 
 .key-value {
@@ -102,74 +124,5 @@ h4 {
 
   .key-plus {
     margin-left: var.$sizeM;
-  }
-}
-
-.button {
-  @extend .main-gradient;
-
-  cursor: pointer;
-  padding: var.$sizeM;
-  border-radius: var.$sizeM;
-  color: var.$background-red;
-
-  display: inline-block;
-  position: relative;
-  overflow: visible;
-  box-sizing: border-box;
-  font-size: var.$fontL;
-  font-weight: normal;
-  user-select: none;
-  text-align: center;
-  white-space: nowrap;
-  text-decoration: none;
-  touch-action: manipulation;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  transition: transform 0.1s ease-out, color 0.15s linear;
-  transform: scale(1);
-
-  &::before {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--yc-button-background-color);
-    transition: background-color 0.15s linear;
-  }
-
-  &:hover::before {
-    background-color: var(--yc-button-background-color-hover);
-  }
-
-  &:focus::before {
-    box-shadow: 0 0 0 2px var(--yc-color-line-misc);
-  }
-
-  &:focus:not(:focus-visible)::before {
-    box-shadow: none;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    transform: scale(1);
-    transition: none;
-  }
-
-  &:active {
-    transition: none;
-    transform: scale(0.96);
-  }
-
-  &:active::after {
-    transform: scale(1.042);
   }
 }
