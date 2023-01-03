@@ -1,0 +1,140 @@
+@use "./var.scss";
+
+@import "./reset.scss";
+@import "./fonts.scss";
+@import "./base.scss";
+
+html, body {
+  @extend .main-gradient;
+
+  width: 100vw;
+  height: 100vh;
+  overflow-y: hidden;
+
+  font-family: $base-font-family;
+  color: var.$color-text-primary;
+}
+
+.content {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: var.$sizeM;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var.$sizeM;
+}
+
+h1 {
+  font-size: var.$fontXXL;
+}
+
+h2 {
+  font-size: var.$fontXL;
+}
+
+h3 {
+  font-size: var.$fontL;
+}
+
+h4 {
+  font-size: var.$fontM;
+}
+
+.text {
+  font-size: var.$fontS;
+  text-align: center;
+}
+
+.social-links {
+  margin-top: var.$sizeM;
+}
+
+.icon {
+  width: var.$sizeXL;
+  height: var.$sizeXL;
+}
+
+.avatar {
+  margin: var.$sizeM 0;
+  width: 256px;
+  height: 256px;
+  border-radius: 100%;
+}
+
+.button {
+  @extend .main-gradient;
+
+  cursor: pointer;
+  padding: var.$sizeM;
+  border-radius: var.$sizeM;
+  color: var.$background-red;
+
+  display: inline-block;
+  position: relative;
+  overflow: visible;
+  box-sizing: border-box;
+  font-size: var.$fontL;
+  font-weight: normal;
+  user-select: none;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  transition: transform 0.1s ease-out, color 0.15s linear;
+  transform: scale(1);
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--yc-button-background-color);
+    transition: background-color 0.15s linear;
+  }
+
+  &:hover::before {
+    background-color: var(--yc-button-background-color-hover);
+  }
+
+  &:focus::before {
+    box-shadow: 0 0 0 2px var(--yc-color-line-misc);
+  }
+
+  &:focus:not(:focus-visible)::before {
+    box-shadow: none;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: scale(1);
+    transition: none;
+  }
+
+  &:active {
+    transition: none;
+    transform: scale(0.96);
+  }
+
+  &:active::after {
+    transform: scale(1.042);
+  }
+}

@@ -1,0 +1,188 @@
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap);
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  all: unset;
+  cursor: pointer;
+}
+
+.main-gradient, .button, html, body {
+  background: hsl(0deg, 0%, 20%);
+  background: linear-gradient(45deg, hsl(0deg, 0%, 20%) 0%, hsl(0deg, 0%, 29%) 100%);
+  background: -moz-linear-gradient(45deg, hsl(0deg, 0%, 20%) 0%, hsl(0deg, 0%, 29%) 100%);
+  background: -webkit-linear-gradient(45deg, hsl(0deg, 0%, 20%) 0%, hsl(0deg, 0%, 29%) 100%);
+}
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: hidden;
+  font-family: "Roboto", sans-serif, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI";
+  color: #FFFFFF;
+}
+
+.content {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 16px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+}
+
+.text {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.social-links {
+  margin-top: 16px;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+}
+
+.avatar {
+  margin: 16px 0;
+  width: 256px;
+  height: 256px;
+  border-radius: 100%;
+}
+
+.button {
+  cursor: pointer;
+  padding: 16px;
+  border-radius: 16px;
+  color: #ED6A5A;
+  display: inline-block;
+  position: relative;
+  overflow: visible;
+  box-sizing: border-box;
+  font-size: 1.5rem;
+  font-weight: normal;
+  user-select: none;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  transition: transform 0.1s ease-out, color 0.15s linear;
+  transform: scale(1);
+}
+.button::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--yc-button-background-color);
+  transition: background-color 0.15s linear;
+}
+.button:hover::before {
+  background-color: var(--yc-button-background-color-hover);
+}
+.button:focus::before {
+  box-shadow: 0 0 0 2px var(--yc-color-line-misc);
+}
+.button:focus:not(:focus-visible)::before {
+  box-shadow: none;
+}
+.button::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: scale(1);
+  transition: none;
+}
+.button:active {
+  transition: none;
+  transform: scale(0.96);
+}
+.button:active::after {
+  transform: scale(1.042);
+}
