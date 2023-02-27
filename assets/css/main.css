@@ -83,9 +83,6 @@ a {
 }
 
 html, body {
-  width: 100vw;
-  height: 100vh;
-  overflow-y: hidden;
   font-family: "Roboto", sans-serif, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI";
   color: #FFFFFF;
 }
